@@ -4,13 +4,10 @@ channels:
 dependencies:
   - pandas
   - python=3.7
-  - ipython
   - numpy
-  - pip
   - nodejs
   - geopandas
   - ipywidgets
   - matplotlib
-  - jupyterlab
   - descartes
   - voila
