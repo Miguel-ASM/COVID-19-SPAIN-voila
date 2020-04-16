@@ -116,3 +116,4 @@ def plotMap(column_name,merged_data,ax = None):
     ax.figure.colorbar(sm,cax=bar_ax,orientation='vertical');
 
     display(ax.figure)
+    plt.close(ax.figure.number)
