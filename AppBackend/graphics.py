@@ -29,11 +29,15 @@ def update_CCAA_area_plot_figure(CCAA_name,communities_data_frames_dict,ax=None)
     ISO_code_column_name = df_columns[0]
     date_column_name = df_columns[1]
     cases_column_name = df_columns[2]
-    Hospitalized_column_name = df_columns[3]
-    UCI_column_name = df_columns[4]
-    deaths_column_name = df_columns[5]
-    recovered_column_name = df_columns[6]
-    activeCases_column_name = df_columns[7]
+    PCR_column_name = df_columns[3]
+    TestAC_column_name = df_columns[4]
+    Hospitalized_column_name = df_columns[5]
+    UCI_column_name = df_columns[6]
+    deaths_column_name = df_columns[7]
+    recovered_column_name = df_columns[8]
+    activeCases_column_name = df_columns[9]
+
+
     # Create a figure if no axes are provided
     if not ax:
         fig, ax = plt.subplots(constrained_layout=True);
