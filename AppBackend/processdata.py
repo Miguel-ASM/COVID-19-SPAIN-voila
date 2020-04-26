@@ -114,6 +114,8 @@ def makeNationalDataFrame(data_file_name = 'data.csv'):
         data_head[4]:np.float64,
         data_head[5]:np.float64,
         data_head[6]:np.float64,
+        data_head[7]:np.float64,
+        data_head[8]:np.float64
     }
     fill_na_dict =  {
         data_head[0]:'',
@@ -122,7 +124,9 @@ def makeNationalDataFrame(data_file_name = 'data.csv'):
         data_head[3]:0.,
         data_head[4]:0.,
         data_head[5]:0.,
-        data_head[6]:0.
+        data_head[6]:0.,
+        data_head[7]:0.,
+        data_head[8]:0.
     }
     # Load the data into a pandas data frame with the correct data types
     data = pd.read_csv(data_file_name,dtype=data_types)
@@ -137,7 +141,7 @@ def makeNationalDataFrame(data_file_name = 'data.csv'):
     # Put the dates in the YYYY-MM-DD format and datetime64 type
     data[data.columns[1]] = pd.to_datetime(data[data.columns[1]],format='%d/%m/%Y',errors='coerce')
     # remove the rows with no date values
-    data.dropna(inplace=True,subset=[data_head[1]])
+    data.dropna(inplace=True,subset=[data.columns[1]])
     # sort the rows by date value
     data.sort_values(by=[data.columns[1]],ignore_index=True,inplace=True)
     # return the data frame
